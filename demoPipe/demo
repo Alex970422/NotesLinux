@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <unistd.h>
+
+
+void fctEnfant(int *fd) {
+    //read pipe and print msg
+    close(fd[1]);
+    char msg[100];
+    read(fd[0], msg, 100);
+    printf("Message: %s\n", msg);
+}
+
+
+int main() {
+    int fd[2];
+    
+    int pErr = pipe(fd);
+    if (pErr == -1) {
+        printf("Error creating pipe\n");
+        return 1;
+    }
+
+    if (fork() == 0) {  // Processus enfant
+        fctEnfant(fd); 
+
+    } else {  // Processus parent
+        //write msg to pipe
+        close(fd[0]);
+        char msg[] = "Hello World!";
+        write(fd[1], msg, 100);
+    }
+    return 0;
+}
+

@@ -1,0 +1,22 @@
+
+pour step by step / breakpoint:
+
+b mot 
+ex : b main
+ex2 : b votre nom
+ 
+run pour commence
+
+next ou n pour prochaine ligne
+
+print (nom variable) pour voir variable quand local
+ou 
+print *adresse
+
+step pour jsp
+
+continue pour reprenddre
+
+0x7f , souvent adresse de piles
+
+
