@@ -6,19 +6,20 @@ int vuln(){
 	      
 	int c;//local
         int d; //local
-	return ;
+	       //rbp vuln
+	return ;//pointeur main
 
 }
 
-int main(void)
+int main(void)//addresse de main
 {
 
-	int a;
-	int b;
+	int a;//var main
+	int b;//var main
 
 	vuln();
-
-
-
+              //rbp main
+return 0; //pointeur runtime
+	  
 
 }
